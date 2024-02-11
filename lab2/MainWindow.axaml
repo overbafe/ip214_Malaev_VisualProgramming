@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="400"
+        x:Class="lab2.MainWindow"
+		MaxWidth="600" MaxHeight="400"
+		MinWidth="300" MinHeight="400"
+        Title="lab2">
+	<Grid>
+
+		<Rectangle Fill="Khaki" Width="465" Height="373" Margin="7" HorizontalAlignment="Right"/>
+
+		<StackPanel Background="Black" Orientation="Vertical" HorizontalAlignment="Left" Width="127">
+			<Border Background="Khaki" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="Khaki"/>
+			</Border>
+
+			<Border Background="Red" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="Red"/>
+			</Border>
+
+			<Border Background="MediumVioletRed" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="MediumVioletRed"/>
+			</Border>
+
+			<Border Background="Bisque" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="Bisque"/>
+			</Border>
+
+			<Border Background="LemonChiffon" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="LemonChiffon"/>
+			</Border>
+
+			<Border Background="PowderBlue" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="PowderBlue"/>
+			</Border>
+
+			<Border Background="MintCream" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="MintCream"/>
+			</Border>
+
+			<Border Background="Maroon" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="Maroon"/>
+			</Border>
+
+			<Border Background="RosyBrown" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="RosyBrown"/>
+			</Border>
+
+			<Border Background="LightPink" Width="120" Height="38">
+				<Button Width="120" Height="38" Background="LightPink"/>
+			</Border>
+		</StackPanel>
+	</Grid>
+</Window>
