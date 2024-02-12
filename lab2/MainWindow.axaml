@@ -7,50 +7,42 @@
 		MaxWidth="600" MaxHeight="400"
 		MinWidth="300" MinHeight="400"
         Title="lab2">
-	<Grid>
-
-		<Rectangle Fill="Khaki" Width="465" Height="373" Margin="7" HorizontalAlignment="Right"/>
-
-		<StackPanel Background="Black" Orientation="Vertical" HorizontalAlignment="Left" Width="127">
-			<Border Background="Khaki" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="Khaki"/>
+	<Grid x:Name="grid" ColumnDefinitions="0.3*, 0.01*, 0.66*">
+		<StackPanel Grid.Column="0">
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="Khaki" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> Khaki</Button>
 			</Border>
-
-			<Border Background="Red" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="Red"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="Red" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">Red</Button>
 			</Border>
-
-			<Border Background="MediumVioletRed" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="MediumVioletRed"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="MediumVioletRed" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> MediumVioletRed</Button>
 			</Border>
-
-			<Border Background="Bisque" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="Bisque"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="Bisque" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> Bisque</Button>
 			</Border>
-
-			<Border Background="LemonChiffon" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="LemonChiffon"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="LemonChiffon" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">LemonChiffon</Button>
 			</Border>
-
-			<Border Background="PowderBlue" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="PowderBlue"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="PowderBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> PowderBlue</Button>
 			</Border>
-
-			<Border Background="MintCream" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="MintCream"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="MintCream" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">MintCream</Button>
 			</Border>
-
-			<Border Background="Maroon" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="Maroon"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="Maroon" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> Maroon</Button>
 			</Border>
-
-			<Border Background="RosyBrown" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="RosyBrown"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="RosyBrown" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">RosyBrown</Button>
 			</Border>
-
-			<Border Background="LightPink" Width="120" Height="38">
-				<Button Width="120" Height="38" Background="LightPink"/>
+			<Border BorderThickness="2" BorderBrush="Black">
+				<Button Click="Button_Click" Background="LightPink" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">LightPink</Button>
 			</Border>
 		</StackPanel>
+
+		<GridSplitter Background="Black" Grid.Column="1"></GridSplitter>
+		<Canvas Background="Khaki" x:Name="canv" Grid.Column="2"></Canvas>
+
 	</Grid>
 </Window>

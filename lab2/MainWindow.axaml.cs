@@ -8,5 +8,13 @@ namespace lab2
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                canv.Background = btn.Background;
+            };
+        }
     }
 }
