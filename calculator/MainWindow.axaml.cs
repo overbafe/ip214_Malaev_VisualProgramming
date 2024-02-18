@@ -12,7 +12,7 @@ namespace calculator
         public MainWindow()
         {
             InitializeComponent();
-            historyLabel.Content = "";
+            historyLabel.Text = "";
             calculator = new Calculator();
         }
 
@@ -27,7 +27,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string); ;
             bool? isFractional = currentString?.Contains('.');
             bool? isNegative = currentString?.Contains('-');
 
@@ -38,12 +38,12 @@ namespace calculator
             }
             else if (currentString?.Length == 1 && Convert.ToDouble(currentString) == 0)
             {
-                currentLabel.Content = (sender as Button)?.Content;
+                currentLabel.Text = (sender as Button)?.Content as string;
             }
             else
             {
                 string? senderString = ((sender as Button)?.Content as string);
-                currentLabel.Content = $"{currentString}{senderString}";
+                currentLabel.Text = $"{currentString}{senderString}";
             }
 
             currentLabelContentChanged();
@@ -57,17 +57,17 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isNegative = currentString?.StartsWith('-');
 
             //explicit bool comprasion cause of nullable bool
             if (isNegative == false && currentString?.Length <= 1 || isNegative == true && currentString?.Length <= 2)
             {
-                currentLabel.Content = "0";
+                currentLabel.Text = "0";
             }
             else
             {
-                currentLabel.Content = $"{currentString?[..Convert.ToInt16(currentString?.Length - 1)]}";
+                currentLabel.Text = $"{currentString?[..Convert.ToInt16(currentString?.Length - 1)]}";
             }
 
             currentLabelContentChanged();
@@ -80,7 +80,7 @@ namespace calculator
                 return;
             }
 
-            currentLabel.Content = "0";
+            currentLabel.Text = "0";
             currentLabelContentChanged();
         }
         private void clearButton_OnClick(object? sender, RoutedEventArgs args)
@@ -96,8 +96,8 @@ namespace calculator
         private void clear()
         {
             operation = Operations.none;
-            currentLabel.Content = "0";
-            historyLabel.Content = "";
+            currentLabel.Text = "0";
+            historyLabel.Text = "";
             currentLabelContentChanged();
         }
         private void comaButton_OnClick(object? sender, RoutedEventArgs args)
@@ -108,7 +108,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isFractional = currentString?.Contains(',');
 
             if (isFractional == true)
@@ -116,7 +116,7 @@ namespace calculator
                 return;
             }
 
-            currentLabel.Content = $"{currentLabel.Content as string},";
+            currentLabel.Text = $"{currentLabel.Text as string},";
 
             currentLabelContentChanged();
         }
@@ -128,7 +128,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
 
             if (currentString?.Length == 1 && Convert.ToDouble(currentString) == 0)
             {
@@ -139,11 +139,11 @@ namespace calculator
 
             if (isNegative == true)
             {
-                currentLabel.Content = $"{(currentLabel.Content as string)?.TrimStart('-')}";
+                currentLabel.Text = $"{(currentLabel.Text as string)?.TrimStart('-')}";
             }
             else
             {
-                currentLabel.Content = $"-{currentLabel.Content as string}";
+                currentLabel.Text = $"-{currentLabel.Text as string}";
             }
 
 
@@ -157,7 +157,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
 
             try
             {
@@ -185,7 +185,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
 
             try
             {
@@ -213,7 +213,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
 
             try
             {
@@ -241,7 +241,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -273,7 +273,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -305,7 +305,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -337,7 +337,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -369,7 +369,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -401,7 +401,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -433,7 +433,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -465,7 +465,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Content as string);
+            string? currentString = (currentLabel.Text as string);
             string? senderString = (sender as Button)?.Content as string;
 
             Operations prevOperation = operation;
@@ -478,8 +478,8 @@ namespace calculator
             {
                 if (prevOperation is not Operations.none)
                 {
-                    string? left = (historyLabel.Content as string)?.Split(' ')[0];
-                    string? right = currentLabel.Content as string;
+                    string? left = (historyLabel.Text as string)?.Split(' ')[0];
+                    string? right = currentLabel.Text as string;
                     double leftPart = Convert.ToDouble(left);
                     double rightPart = Convert.ToDouble(right);
                     switch (prevOperation)
@@ -506,8 +506,8 @@ namespace calculator
                             }
                         default:
                             {
-                                historyLabel.Content = $"{currentString} {senderString}";
-                                currentLabel.Content = "0";
+                                historyLabel.Text = $"{currentString} {senderString}";
+                                currentLabel.Text = "0";
                                 currentLabelContentChanged();
                                 return;
                             }
@@ -515,8 +515,8 @@ namespace calculator
                 }
                 else
                 {
-                    historyLabel.Content = $"{currentString} {senderString}";
-                    currentLabel.Content = "0";
+                    historyLabel.Text = $"{currentString} {senderString}";
+                    currentLabel.Text = "0";
                     currentLabelContentChanged();
                     return;
                 }
@@ -524,7 +524,7 @@ namespace calculator
             catch (FormatException ex)
             {
                 operation = prevOperation;
-                historyLabel.Content = currentLabel.Content as string;
+                historyLabel.Text = currentLabel.Text as string;
                 operationButton_OnClick(sender, args);
                 return;
             }
@@ -543,8 +543,8 @@ namespace calculator
 
             if (operation != Operations.equal)
             {
-                historyLabel.Content = $"{result} {senderString}";
-                currentLabel.Content = "0";
+                historyLabel.Text = $"{result} {senderString}";
+                currentLabel.Text = "0";
             }
             else if (prevOperation == Operations.equal)
             {
@@ -553,7 +553,7 @@ namespace calculator
             else
             {
                 writeRightHistoryOperand($" {currentString} =");
-                currentLabel.Content = result.ToString();
+                currentLabel.Text = result.ToString();
             }
 
             currentLabelContentChanged();
@@ -561,7 +561,7 @@ namespace calculator
 
         private void currentLabelContentChanged()
         {
-            currentLabel.FontSize = (currentLabel.Content as string)?.Length switch
+            currentLabel.FontSize = (currentLabel.Text as string)?.Length switch
             {
                 < 8 => 55,
                 >= 8 and < 10 => 42,
@@ -582,7 +582,7 @@ namespace calculator
         }
         void writeRightHistoryOperand(string rightOperand)
         {
-            string? historyString = (historyLabel.Content as string);
+            string? historyString = (historyLabel.Text as string);
             string[]? historyStringArr = historyString?.Split(' ');
 
             if (historyStringArr?.Length < 3)
@@ -595,7 +595,7 @@ namespace calculator
                 historyString = $"{historyStringArr[0]} {historyStringArr[1]} {historyStringArr[2]}";
             }
 
-            historyLabel.Content = historyString;
+            historyLabel.Text = historyString;
         }
         void OnErrorSkip()
         {
@@ -607,7 +607,7 @@ namespace calculator
         {
             clear();
             errorHappened = true;
-            currentLabel.Content = "ОШИБКА";
+            currentLabel.Text = "ОШИБКА";
             currentLabel.Foreground = Brushes.Red;
         }
         void updateLabels(string rightOperand, string result)
@@ -618,10 +618,10 @@ namespace calculator
             }
             else
             {
-                historyLabel.Content = @$"{rightOperand}";
+                historyLabel.Text = @$"{rightOperand}";
             }
 
-            currentLabel.Content = result;
+            currentLabel.Text = result;
 
             currentLabelContentChanged();
         }

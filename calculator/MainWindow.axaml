@@ -8,12 +8,12 @@
         Width="450" Height="550"
         MinWidth="320" MinHeight="349">
 	<Grid RowDefinitions="Auto, Auto, *">
-		<Label Grid.Row="0" x:Name="historyLabel" Margin="0,15,15,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" Foreground="Gray">
+		<TextBlock Grid.Row="0" x:Name="historyLabel" Margin="0,15,15,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" Foreground="Gray">
 			0
-		</Label>
-		<Label Grid.Row="1" x:Name="currentLabel" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="55" FontWeight="Black">
+		</TextBlock>
+		<TextBlock Grid.Row="1" x:Name="currentLabel" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="55" FontWeight="Black">
 			0
-		</Label>
+		</TextBlock>
 		<Grid Grid.Row="2" RowDefinitions="*, *, *, *, *, *" ColumnDefinitions="*, *, *, * ,*">
 			<Grid.Styles>
 				<Style Selector="Button">
