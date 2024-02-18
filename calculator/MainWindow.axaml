@@ -1,0 +1,119 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="550"
+        x:Class="calculator.MainWindow"
+        Title="Calculator"
+        Width="450" Height="550"
+        MinWidth="320" MinHeight="349">
+	<Grid RowDefinitions="Auto, Auto, *">
+		<Label Grid.Row="0" x:Name="historyLabel" Margin="0,15,15,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" Foreground="Gray">
+			0
+		</Label>
+		<Label Grid.Row="1" x:Name="currentLabel" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="55" FontWeight="Black">
+			0
+		</Label>
+		<Grid Grid.Row="2" RowDefinitions="*, *, *, *, *, *" ColumnDefinitions="*, *, *, * ,*">
+			<Grid.Styles>
+				<Style Selector="Button">
+					<Setter Property="HorizontalAlignment" Value="Stretch"/>
+					<Setter Property="VerticalAlignment" Value="Stretch"/>
+					<Setter Property="HorizontalContentAlignment" Value="Center"/>
+					<Setter Property="VerticalContentAlignment" Value="Center"/>
+					<Setter Property="FontSize" Value="25"/>
+				</Style>
+			</Grid.Styles>
+			<Button Grid.Row="0" Grid.Column="0" Name="percentButton" Click="percentButton_OnClick">
+				%
+			</Button>
+			<Button Grid.Row="0" Grid.Column="1" Name="factorialButton" Click="factorialButton_OnClick">
+				x!
+			</Button>
+			<Button Grid.Row="0" Grid.Column="2" Name="clearEntryButton" Click="clearEntryButton_OnClick">
+				CE
+			</Button>
+			<Button Grid.Row="0" Grid.Column="3" Name="clearButton" Click="clearButton_OnClick">
+				C
+			</Button>
+			<Button Grid.Row="0" Grid.Column="4" Name="eraseButton" Click="eraseButton_OnClick">
+				&#9003;
+			</Button>
+			<Button Grid.Row="1" Grid.Column="0" Name="reciprocalButton" Click="reciprocalButton_OnClick">
+				1/x
+			</Button>
+			<Button Grid.Row="1" Grid.Column="1" Name="squareButton" Click="squareButton_OnClick">
+				x&#178;
+			</Button>
+			<Button Grid.Row="1" Grid.Column="2" Name="sqruareRootButton" FontSize="20" Click="squareRootButton_OnClick">
+				sqrt(x)
+			</Button>
+			<Button Grid.Row="1" Grid.Column="3" Name="divideButton" Click="operationButton_OnClick">
+				/
+			</Button>
+			<Button Grid.Row="1" Grid.Column="4" Name="logButton" Click="logButton_OnClick">
+				log(x)
+			</Button>
+			<Button Grid.Row="2" Grid.Column="0" Name="sevenButton" Click="numberButton_OnClick">
+				7
+			</Button>
+			<Button Grid.Row="2" Grid.Column="1" Name="eightButton" Click="numberButton_OnClick">
+				8
+			</Button>
+			<Button Grid.Row="2" Grid.Column="2" Name="nineButton" Click="numberButton_OnClick">
+				9
+			</Button>
+			<Button Grid.Row="2" Grid.Column="3" Name="timesButton" Click="operationButton_OnClick">
+				&#10761;
+			</Button>
+			<Button Grid.Row="2" Grid.Column="4" Name="lnButton" Click="lnButton_OnClick">
+				ln(x)
+			</Button>
+			<Button Grid.Row="3" Grid.Column="0" Name="fourButton" Click="numberButton_OnClick">
+				4
+			</Button>
+			<Button Grid.Row="3" Grid.Column="1" Name="fiveButton" Click="numberButton_OnClick">
+				5
+			</Button>
+			<Button Grid.Row="3" Grid.Column="2" Name="sixButton" Click="numberButton_OnClick">
+				6
+			</Button>
+			<Button Grid.Row="3" Grid.Column="3" Name="minusButton" Click="operationButton_OnClick">
+				-
+			</Button>
+			<Button Grid.Row="3" Grid.Column="4" Name="sinButton" Click="sinButton_OnClick">
+				sin(x)
+			</Button>
+			<Button Grid.Row="4" Grid.Column="0" Name="oneButton" Click="numberButton_OnClick">
+				1
+			</Button>
+			<Button Grid.Row="4" Grid.Column="1" Name="twoButton" Click="numberButton_OnClick">
+				2
+			</Button>
+			<Button Grid.Row="4" Grid.Column="2" Name="threeButton" Click="numberButton_OnClick">
+				3
+			</Button>
+			<Button Grid.Row="4" Grid.Column="3" Name="plusButton" Click="operationButton_OnClick">
+				+
+			</Button>
+			<Button Grid.Row="4" Grid.Column="4" Name="cosButton" Click="cosButton_OnClick">
+				cos(x)
+			</Button>
+			<Button Grid.Row="5" Grid.Column="0" Name="negateButton" Click="negateButton_OnClick">
+				&#x207a;&#x2044;&#x208b;
+			</Button>
+			<Button Grid.Row="5" Grid.Column="1" Name="zeroButton" Click="numberButton_OnClick">
+				0
+			</Button>
+			<Button Grid.Row="5" Grid.Column="2" Name="dotButton" Click="comaButton_OnClick">
+				,
+			</Button>
+			<Button Grid.Row="5" Grid.Column="3" Name="equalButton" Click="operationButton_OnClick">
+				=
+			</Button>
+			<Button Grid.Row="5" Grid.Column="4" Name="tgButton" Click="tgButton_OnClick">
+				tg(x)
+			</Button>
+		</Grid>
+	</Grid>
+</Window>
