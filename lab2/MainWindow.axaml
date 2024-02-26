@@ -5,7 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="400"
         x:Class="lab2.MainWindow"
 		MaxWidth="600" MaxHeight="400"
-		MinWidth="300" MinHeight="400"
+		MinWidth="300" MinHeight="300"
         Title="lab2">
 	<Grid x:Name="grid" ColumnDefinitions="0.3*, 0.01*, 0.66*">
 		<StackPanel Grid.Column="0">

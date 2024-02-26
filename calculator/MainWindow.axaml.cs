@@ -27,7 +27,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string); ;
+            string? currentString = (currentLabel.Text); ;
             bool? isFractional = currentString?.Contains('.');
             bool? isNegative = currentString?.Contains('-');
 
@@ -57,7 +57,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text);
             bool? isNegative = currentString?.StartsWith('-');
 
             //explicit bool comprasion cause of nullable bool
@@ -108,7 +108,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text);
             bool? isFractional = currentString?.Contains(',');
 
             if (isFractional == true)
@@ -116,7 +116,7 @@ namespace calculator
                 return;
             }
 
-            currentLabel.Text = $"{currentLabel.Text as string},";
+            currentLabel.Text = $"{currentLabel.Text},";
 
             currentLabelContentChanged();
         }
@@ -128,7 +128,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text);
 
             if (currentString?.Length == 1 && Convert.ToDouble(currentString) == 0)
             {
@@ -139,11 +139,11 @@ namespace calculator
 
             if (isNegative == true)
             {
-                currentLabel.Text = $"{(currentLabel.Text as string)?.TrimStart('-')}";
+                currentLabel.Text = $"{(currentLabel.Text)?.TrimStart('-')}";
             }
             else
             {
-                currentLabel.Text = $"-{currentLabel.Text as string}";
+                currentLabel.Text = $"-{currentLabel.Text}";
             }
 
 
@@ -157,7 +157,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text);
 
             try
             {
@@ -185,7 +185,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text);
 
             try
             {
@@ -213,7 +213,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text);
 
             try
             {
@@ -241,7 +241,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text  );
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -273,7 +273,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text);
             bool? isNegative = currentString?.StartsWith('-');
             double? result = null;
 
@@ -465,7 +465,7 @@ namespace calculator
                 return;
             }
 
-            string? currentString = (currentLabel.Text as string);
+            string? currentString = (currentLabel.Text);
             string? senderString = (sender as Button)?.Content as string;
 
             Operations prevOperation = operation;
@@ -478,8 +478,8 @@ namespace calculator
             {
                 if (prevOperation is not Operations.none)
                 {
-                    string? left = (historyLabel.Text as string)?.Split(' ')[0];
-                    string? right = currentLabel.Text as string;
+                    string? left = (historyLabel.Text)?.Split(' ')[0];
+                    string? right = currentLabel.Text;
                     double leftPart = Convert.ToDouble(left);
                     double rightPart = Convert.ToDouble(right);
                     switch (prevOperation)
@@ -524,7 +524,7 @@ namespace calculator
             catch (FormatException ex)
             {
                 operation = prevOperation;
-                historyLabel.Text = currentLabel.Text as string;
+                historyLabel.Text = currentLabel.Text;
                 operationButton_OnClick(sender, args);
                 return;
             }
@@ -561,7 +561,7 @@ namespace calculator
 
         private void currentLabelContentChanged()
         {
-            currentLabel.FontSize = (currentLabel.Text as string)?.Length switch
+            currentLabel.FontSize = (currentLabel.Text)?.Length switch
             {
                 < 8 => 55,
                 >= 8 and < 10 => 42,
@@ -582,7 +582,7 @@ namespace calculator
         }
         void writeRightHistoryOperand(string rightOperand)
         {
-            string? historyString = (historyLabel.Text as string);
+            string? historyString = (historyLabel.Text);
             string[]? historyStringArr = historyString?.Split(' ');
 
             if (historyStringArr?.Length < 3)
@@ -642,113 +642,6 @@ namespace calculator
                 default:
                     return Operations.none;
             }
-        }
-    }
-
-    public class Calculator
-    {
-        public double Add(double a, double b)
-        {
-            return a + b;
-        }
-        public double Subtract(double a, double b)
-        {
-            return a - b;
-        }
-        public double Multiply(double a, double b)
-        {
-            return a * b;
-        }
-        public double Divide(double a, double b)
-        {
-            if (b == 0)
-            {
-                throw new DivideByZeroException("Невозможно делить на ноль");
-            }
-
-            return a / b;
-        }
-        public double Square(double a)
-        {
-            return a * a;
-        }
-        public double SquareRoot(double a)
-        {
-            if (a < 0)
-            {
-                throw new ArgumentException("Невозможно вычислить квадратный корень из отрицательного числа");
-            }
-
-            return Math.Sqrt(a);
-        }
-        public double Percentage(double a)
-        {
-            return a / 100;
-        }
-        public double Reciprocal(double a)
-        {
-            if (a == 0)
-            {
-                throw new DivideByZeroException("Невозможно делить на ноль");
-            }
-
-            return 1 / a;
-        }
-        public double Factorial(double a)
-        {
-            if (a < 0)
-            {
-                throw new ArgumentException("Факториал можно вычислить только для неотрицательных целых чисел");
-            }
-
-            if (a != Math.Round(a))
-            {
-                throw new ArgumentException("Факториал можно считать только у целых чисел");
-            }
-
-            if (a == 0)
-            {
-                return 1;
-            }
-
-            double result = 1;
-            for (int i = 1; i <= a; i++)
-            {
-                result *= i;
-            }
-
-            return result;
-
-        }
-        public double Ln(double x)
-        {
-            if (x <= 0)
-            {
-                throw new ArgumentException("Натуральный логарифм определен только для положительных чисел");
-            }
-
-            return Math.Log(x);
-        }
-        public double Log(double x, double newBase)
-        {
-            if (x <= 0 || newBase <= 0 || newBase == 1)
-            {
-                throw new ArgumentException("Логарифмы определены только для положительных чисел и базы логарифма не равной 1");
-            }
-
-            return Math.Log(x, newBase);
-        }
-        public double Sin(double x)
-        {
-            return Math.Sin(x);
-        }
-        public double Cos(double x)
-        {
-            return Math.Cos(x);
-        }
-        public double Tan(double x)
-        {
-            return Math.Tan(x);
         }
     }
 }

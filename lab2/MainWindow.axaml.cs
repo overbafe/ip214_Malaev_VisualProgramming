@@ -9,7 +9,7 @@ namespace lab2
             InitializeComponent();
         }
 
-        private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs click)
         {
             if (sender is Button btn)
             {
@@ -18,3 +18,4 @@ namespace lab2
         }
     }
 }
+
